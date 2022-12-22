@@ -1,0 +1,239 @@
+<mat-horizontal-stepper #stepper [linear]="linear">
+  <!-- [linear]="linear" -->
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Personal Details</ng-template>
+      <div class="form-group">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <mat-form-field>
+            <mat-label>Fullname</mat-label> 
+            <input matInput formControlName="fullname">
+            <mat-error>Name is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="firstFormGroup.controls['email'].hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="firstFormGroup.controls['email'].hasError('email')">Please provide a valid email</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Contact No</mat-label>
+            <input matInput formControlName="phone">
+            <mat-error *ngIf="firstFormGroup.controls['phone'].hasError('required')">Contact no. is required</mat-error>
+            <mat-error *ngIf="firstFormGroup.controls['phone'].hasError('pattern')">Please enter a valid phone number</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <input matInput formControlName="gender" style="visibility: hidden;">
+            <mat-radio-group matInput class="gender" formControlName="gender">
+              <mat-radio-button color="primary" style="padding:4px 4px 0px 0px;" value="Male">Male</mat-radio-button>
+              <mat-radio-button color="primary" style="padding:4px 0px 0px 24px;" value="Female">Female
+              </mat-radio-button>
+            </mat-radio-group>
+            <mat-error>
+              Please provide gender
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <button class="btn" mat-raised-button color="primary" mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+      
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Goal Plan details</ng-template>
+      <div class="form-group">
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Age in years</mat-label>
+            <input matInput formControlName="age">
+            <mat-error>Mention your current age</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <mat-form-field>
+            <mat-label>Duration of Plans; ex: 3 months</mat-label>
+            <input matInput formControlName="duration">
+            <mat-error>Plan duration is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <mat-form-field>
+            <mat-label>Your goal(s); ex: wants to be fit</mat-label>
+            <input matInput formControlName="goals">
+            <mat-error>Mention your goals</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Weight in Kg(s)</mat-label>
+            <input matInput formControlName="weight">
+            <mat-error>Provide your weight in Kg</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Height in feet inches</mat-label>
+            <input matInput formControlName="height">
+            <mat-error>Provide your height in Feet inches</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Lose/Gain weight</mat-label>
+            <input matInput formControlName="loseORgain" style="visibility: hidden;">
+            <mat-radio-group matInput class="gender" formControlName="loseORgain">
+              <mat-radio-button color="primary" style="padding:4px 4px 0px 0px;" value="Lose">Lose</mat-radio-button>
+              <mat-radio-button color="primary" style="padding:4px 0px 0px 24px;" value="Gain">Gain
+              </mat-radio-button>
+            </mat-radio-group>
+            <mat-error>
+              Mention Lose/Gain
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <button class="btn" mat-raised-button color="accent" mat-button matStepperPrevious>Back</button>
+          <button class="btn" mat-raised-button color="primary" mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="otherDetailsFormGroup">
+    <form [formGroup]="otherDetailsFormGroup">
+      <ng-template matStepLabel>Other details</ng-template>
+      <div class="form-group">
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Any food you are having allergy with?</mat-label>
+            <input matInput formControlName="foodAllergy">
+            <mat-error>Mention food allergy if any</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <mat-form-field>
+            <mat-label>Mention if any medical issue</mat-label>
+            <input matInput formControlName="medicalIssue">
+            <mat-error>Mention if any medical issue</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Veg / Non-veg / Just Egg</mat-label>
+            <input matInput formControlName="foodType" style="visibility: hidden;">
+            <mat-radio-group matInput formControlName="foodType">
+              <mat-radio-button color="primary" style="padding:4px 4px 0px 0px;" value="Veg">Veg</mat-radio-button>
+              <mat-radio-button color="primary" style="padding:4px 0px 0px 24px;" value="Non-veg">Non-veg
+              </mat-radio-button>
+              <mat-radio-button color="primary" style="padding:4px 0px 0px 24px;" value="Just Egg">Just Egg
+              </mat-radio-button>
+            </mat-radio-group>
+            <mat-error>
+              Mention Veg / Non-veg / Just Egg
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <mat-form-field>
+            <mat-label>Going gym?</mat-label>
+            <input matInput formControlName="goingGym" style="visibility: hidden;">
+            <mat-radio-group matInput formControlName="goingGym">
+              <mat-radio-button color="primary" style="padding:4px 4px 0px 0px;" value="Yes">Yes</mat-radio-button>
+              <mat-radio-button color="primary" style="padding:4px 0px 0px 24px;" value="No">No
+              </mat-radio-button>
+            </mat-radio-group>
+            <mat-error>
+              Mention whether you go to gym or not
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-12">
+          <button class="btn" mat-raised-button color="accent" mat-button matStepperPrevious >Back</button>
+          <button class="btn" mat-raised-button color="primary" mat-button matStepperNext (click)="done()">Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <a >
+    <mat-step [completed]="completed" [state]="state">
+      <ng-template matStepLabel >Complete</ng-template>
+      <div class="row">
+        <div class="col-lg-4">
+          <h3 class="details-header">Personal Details</h3>
+          <div class="details-value">
+            <h5> <span>Name: </span>
+              {{ personalDetailsFormObject?.fullname }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Email:</span>
+             {{ personalDetailsFormObject?.email }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Contact Number:</span> {{ personalDetailsFormObject?.phone }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Gender:</span> {{ personalDetailsFormObject?.gender }}</h5>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <h3 class="details-header -child">Goal Plan Details</h3>
+          <div class="details-value">
+            <h5> <span>Age: </span>
+              {{ goalDetailsFormObject?.age }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Duration of Plan:</span>
+             {{ goalDetailsFormObject?.duration }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Your Goals:</span> {{ goalDetailsFormObject?.goals }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Weight:</span> {{ goalDetailsFormObject?.weight }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Height:</span> {{ goalDetailsFormObject?.height }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Lose/Gain Weight:</span> {{ goalDetailsFormObject?.loseORgain }}</h5>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <h3 class="details-header -child">Other Details</h3>
+          <div class="details-value">
+            <h5> <span>Any food allergy: </span>
+              {{ otherDetailsFormObject?.foodAllergy ? otherDetailsFormObject?.foodAllergy : 'No allergy' }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Any Medical issue:</span>
+             {{ otherDetailsFormObject?.medicalIssue ? otherDetailsFormObject?.medicalIssue : 'No medical issue' }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Veg / Non-veg / Just Egg:</span> {{ otherDetailsFormObject?.foodType }}</h5>
+          </div>
+          <div class="details-value">
+            <h5><span>Going Gym:</span> {{ otherDetailsFormObject?.goingGym }}</h5>
+          </div>
+        </div>
+      </div>
+     
+     
+      <div style="float: right;">
+        <button class="btn" mat-raised-button color="accent" matStepperPrevious>Back</button>
+        <button class="btn" mat-raised-button color="primary" (click)="done()">Submit</button>
+      </div>
+    </mat-step>
+  </a>
+  
+</mat-horizontal-stepper>

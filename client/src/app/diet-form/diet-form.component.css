@@ -1,0 +1,41 @@
+.mat-form-field {
+    width: 100%;
+}
+
+.form-group {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.mat-mdc-form-field {
+    display: block;
+}
+
+.details-value {
+    padding: 6px 6px 6px 0;
+}
+
+.details-header {
+    padding: 8px 8px 8px 0;
+    font-weight: 600;
+}
+
+.details-header.nth-child {
+    margin-top: 2rem;
+}
+
+.details-value span {
+    font-weight: 600;
+    padding: 3px;
+}
+
+.btn {
+    margin: 3px;
+}
+
+@media (min-width: 940px) {
+    .form-group {
+        width: 60%;
+    }
+}
