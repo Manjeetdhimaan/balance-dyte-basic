@@ -58,4 +58,11 @@ export class DietFormComponent implements OnInit {
     this.completed = true;
     this.state = 'done';
   }
+
+  submitForm () {
+   const ele = document.body.querySelector('#exampleModalCenter1')
+   
+    console.log(ele)
+
+  }
 }
