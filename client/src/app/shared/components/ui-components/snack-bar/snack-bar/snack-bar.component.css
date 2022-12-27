@@ -1,0 +1,18 @@
+.snackbar {
+    text-align: center;
+}
+
+.dismiss {
+    font-size: 16px;
+}
+
+.dismiss-button {
+    font-size: 16px;
+    float: right;
+    background: rgba(18, 18, 18, 0.459);
+    color: #fff;
+    border-radius: 6px;
+    border-color: transparent;
+    cursor: pointer;
+    padding: 2px 8px;
+}

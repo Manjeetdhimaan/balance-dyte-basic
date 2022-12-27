@@ -38,3 +38,77 @@
         width: 60%;
     }
 }
+
+/* server messages */
+
+#serverSuccess {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50px);
+    bottom: 10%;
+    background-color: rgba(169, 246, 166, 0.948);
+    padding: 4px 16px;
+    color: green;
+    border-radius: 3px;
+    border: 1px solid green;
+    opacity: 0;
+    text-align: center;
+    /* transform: translate(0, -50px); */
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.btnDiv {
+    text-align: center;
+    margin: auto;
+}
+
+#serverMsgBtn {
+    border-radius: 3px;
+    opacity: 0;
+    /* transform: translate(0, -50px); */
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    z-index: 1000;
+    margin-top: 6px;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    #serverSuccess {
+        width: 95%;
+    }
+}
+
+
+/* ::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: #cacae8
+} */
+
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: #cacae8!important;
+    color: black;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit{
+    background-color: #cacae8!important;
+    color: black;
+}
+
+::ng-deep .mat-mdc-raised-button:not(:disabled) {
+    background-color: #cacae8!important;
+    color: black!important;
+}
+
+
+::ng-deep .mat-mdc-outlined-button:not(:disabled) {
+    border-color: #cacae8!important;
+    color: black!important;
+}
+
+
+::ng-deep .custom-style{
+    background-color:brown;
+    color:white;
+  }

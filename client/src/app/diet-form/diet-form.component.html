@@ -1,7 +1,7 @@
-<mat-horizontal-stepper #stepper>
+<mat-horizontal-stepper #stepper (selectionChange)="done()">
   <!-- [linear]="linear" -->
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+  <mat-step [stepControl]="personalDetailsFormGroup">
+    <form [formGroup]="personalDetailsFormGroup">
       <ng-template matStepLabel>Personal Details</ng-template>
       <div class="form-group">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -15,8 +15,8 @@
           <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput formControlName="email">
-            <mat-error *ngIf="firstFormGroup.controls['email'].hasError('required')">Email is required</mat-error>
-            <mat-error *ngIf="firstFormGroup.controls['email'].hasError('email')">Please provide a valid
+            <mat-error *ngIf="personalDetailsFormGroup.controls['email'].hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="personalDetailsFormGroup.controls['email'].hasError('email')">Please provide a valid
               email</mat-error>
           </mat-form-field>
         </div>
@@ -24,8 +24,8 @@
           <mat-form-field>
             <mat-label>Contact No</mat-label>
             <input matInput formControlName="phone">
-            <mat-error *ngIf="firstFormGroup.controls['phone'].hasError('required')">Contact no. is required</mat-error>
-            <mat-error *ngIf="firstFormGroup.controls['phone'].hasError('pattern')">Please enter a valid phone
+            <mat-error *ngIf="personalDetailsFormGroup.controls['phone'].hasError('required')">Contact no. is required</mat-error>
+            <mat-error *ngIf="personalDetailsFormGroup.controls['phone'].hasError('pattern')">Please enter a valid phone
               number</mat-error>
           </mat-form-field>
         </div>
@@ -44,23 +44,24 @@
           </mat-form-field>
         </div>
         <div class="col-lg-12">
-          <button class="btn" mat-raised-button color="primary" mat-button matStepperNext>Next</button>
-        </div>
-      </div>
-
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Goal Plan details</ng-template>
-      <div class="form-group">
-        <div class="col-lg-12">
           <mat-form-field>
             <mat-label>Age in years</mat-label>
             <input matInput formControlName="age">
             <mat-error>Mention your current age</mat-error>
           </mat-form-field>
         </div>
+        <div class="col-lg-12">
+          <button class="btn" mat-raised-button color="primary" mat-button matStepperNext>Next</button>
+        </div>
+      </div>
+
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="goalPlanDetailsFormGroup">
+    <form [formGroup]="goalPlanDetailsFormGroup">
+      <ng-template matStepLabel>Goal Plan details</ng-template>
+      <div class="form-group">
+      
         <div class="col-lg-12 col-md-12 col-sm-12">
           <mat-form-field>
             <mat-label>Duration of Plans; ex: 3 months</mat-label>
@@ -85,7 +86,7 @@
         <div class="col-lg-12">
           <mat-form-field>
             <mat-label>Height in feet inches</mat-label>
-            <input matInput formControlName="height">
+            <input type="text" matInput formControlName="height">
             <mat-error>Provide your height in Feet inches</mat-error>
           </mat-form-field>
         </div>
@@ -104,7 +105,7 @@
           </mat-form-field>
         </div>
         <div class="col-lg-12">
-          <button class="btn" mat-raised-button color="accent" mat-button matStepperPrevious>Back</button>
+          <button class="btn" mat-stroked-button color="accent" mat-button matStepperPrevious>Back</button>
           <button class="btn" mat-raised-button color="primary" mat-button matStepperNext>Next</button>
         </div>
       </div>
@@ -159,165 +160,175 @@
           </mat-form-field>
         </div>
         <div class="col-lg-12">
-          <button class="btn" mat-raised-button color="accent" mat-button matStepperPrevious>Back</button>
+          <button class="btn" mat-stroked-button color="accent" mat-button matStepperPrevious>Back</button>
           <button class="btn" mat-raised-button color="primary" mat-button matStepperNext (click)="done()">Next</button>
         </div>
       </div>
     </form>
   </mat-step>
-  <mat-step [completed]="completed" [state]="state">
-    <ng-template matStepLabel>Complete</ng-template>
-    <div class="row">
-      <div class="col-lg-4">
-        <mat-card matRipple>
-
-          <mat-card-header style="display:flex">
-            <mat-card-title style="flex: 1 1 auto">Personal Details</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
+    <mat-step [completed]="completed" [state]="state">
+      <ng-template matStepLabel><p (click)="done()"></p> Complete</ng-template>
+      <div class="row">
+        <div class="col-lg-4">
+          <mat-card matRipple>
+  
+            <mat-card-header style="display:flex">
+              <mat-card-title style="flex: 1 1 auto">Personal Details</mat-card-title>
+            </mat-card-header>
+  
             <mat-card-content>
-              <div class="details-value">
-                <h6> <span>Name: </span>
-                  {{ personalDetailsFormObject?.fullname }}</h6>
-              </div>
+              <mat-card-content>
+                <div class="details-value">
+                  <h6> <span>Name: </span>
+                    {{ personalDetailsFormObject?.fullname }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Email:</span>
+                    {{ personalDetailsFormObject?.email }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Contact Number:</span> {{ personalDetailsFormObject?.phone }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Gender:</span> {{ personalDetailsFormObject?.gender }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6> <span>Age: </span>
+                    {{ personalDetailsFormObject?.age }}</h6>
+                </div>
+              </mat-card-content>
+  
             </mat-card-content>
-
+  
+            <!--  <mat-card-actions style="display:flex; justify-content: flex-end">
+              <button mat-button color="primary">Edit</button>
+            </mat-card-actions> --> 
+  
+          </mat-card>
+  
+  
+        </div>
+  
+        <div class="col-lg-4">
+          <mat-card matRipple>
+  
+            <mat-card-header style="display:flex">
+              <mat-card-title style="flex: 1 1 auto">Goal Plan Details</mat-card-title>
+            </mat-card-header>
+  
             <mat-card-content>
-              <div class="details-value">
-                <h6><span>Email:</span>
-                  {{ personalDetailsFormObject?.email }}</h6>
-              </div>
+          
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Duration of Plan:</span>
+                    {{ goalDetailsFormObject?.duration }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Your Goals:</span> {{ goalDetailsFormObject?.goals }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Weight:</span> {{ goalDetailsFormObject?.weight }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Height:</span> {{ goalDetailsFormObject?.height }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Lose/Gain Weight:</span> {{ goalDetailsFormObject?.loseORgain }}</h6>
+                </div>
+              </mat-card-content>
+  
             </mat-card-content>
-
+  
+                      <!-- <mat-card-actions style="display:flex; justify-content: flex-end">
+              <button mat-button color="primary">Edit</button>
+            </mat-card-actions> -->
+  
+          </mat-card>
+        </div>
+  
+        <div class="col-lg-4">
+          <mat-card matRipple>
+  
+            <mat-card-header style="display:flex">
+              <mat-card-title style="flex: 1 1 auto">Other Details</mat-card-title>
+            </mat-card-header>
+  
             <mat-card-content>
-              <div class="details-value">
-                <h6><span>Contact Number:</span> {{ personalDetailsFormObject?.phone }}</h6>
-              </div>
+              <mat-card-content>
+                <div class="details-value">
+                  <h6> <span>Any food allergy: </span>
+                    {{ otherDetailsFormObject?.foodAllergy ? otherDetailsFormObject?.foodAllergy : 'No allergy' }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Any Medical issue:</span>
+                    {{ otherDetailsFormObject?.medicalIssue ? otherDetailsFormObject?.medicalIssue : 'No medical issue' }}
+                  </h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Veg / Non-veg / Just Egg:</span> {{ otherDetailsFormObject?.foodType }}</h6>
+                </div>
+              </mat-card-content>
+  
+              <mat-card-content>
+                <div class="details-value">
+                  <h6><span>Going Gym:</span> {{ otherDetailsFormObject?.goingGym }}</h6>
+                </div>
+              </mat-card-content>
+  
             </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Gender:</span> {{ personalDetailsFormObject?.gender }}</h6>
-              </div>
-            </mat-card-content>
-
-          </mat-card-content>
-
-          <mat-card-actions style="display:flex; justify-content: flex-end">
-            <button mat-button color="primary">Edit</button>
-          </mat-card-actions>
-
-        </mat-card>
-
-
+                      <!-- <mat-card-actions style="display:flex; justify-content: flex-end">
+              <button mat-button color="primary">Edit</button>
+            </mat-card-actions> -->
+          </mat-card>
+        </div>
       </div>
-
-      <div class="col-lg-4">
-        <mat-card matRipple>
-
-          <mat-card-header style="display:flex">
-            <mat-card-title style="flex: 1 1 auto">Goal Plan Details</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
-            <mat-card-content>
-              <div class="details-value">
-                <h6> <span>Age: </span>
-                  {{ goalDetailsFormObject?.age }}</h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Duration of Plan:</span>
-                  {{ goalDetailsFormObject?.duration }}</h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Your Goals:</span> {{ goalDetailsFormObject?.goals }}</h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Weight:</span> {{ goalDetailsFormObject?.weight }}</h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Height:</span> {{ goalDetailsFormObject?.height }}</h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Lose/Gain Weight:</span> {{ goalDetailsFormObject?.loseORgain }}</h6>
-              </div>
-            </mat-card-content>
-
-          </mat-card-content>
-
-          <mat-card-actions style="display:flex; justify-content: flex-end">
-            <button mat-button color="primary">Edit</button>
-          </mat-card-actions>
-
-        </mat-card>
+      
+      <div style="float: right;">
+        <button class="btn" mat-stroked-button color="accent" matStepperPrevious>Back</button>
+        <button class="btn" mat-raised-button color="primary" (click)="submitForm()" role="button">Submit</button>
       </div>
-
-      <div class="col-lg-4">
-        <mat-card matRipple>
-
-          <mat-card-header style="display:flex">
-            <mat-card-title style="flex: 1 1 auto">Other Details</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
-            <mat-card-content>
-              <div class="details-value">
-                <h6> <span>Any food allergy: </span>
-                  {{ otherDetailsFormObject?.foodAllergy ? otherDetailsFormObject?.foodAllergy : 'No allergy' }}</h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Any Medical issue:</span>
-                  {{ otherDetailsFormObject?.medicalIssue ? otherDetailsFormObject?.medicalIssue : 'No medical issue' }}
-                </h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Veg / Non-veg / Just Egg:</span> {{ otherDetailsFormObject?.foodType }}</h6>
-              </div>
-            </mat-card-content>
-
-            <mat-card-content>
-              <div class="details-value">
-                <h6><span>Going Gym:</span> {{ otherDetailsFormObject?.goingGym }}</h6>
-              </div>
-            </mat-card-content>
-
-          </mat-card-content>
-          <mat-card-actions style="display:flex; justify-content: flex-end">
-            <button mat-button color="primary">Edit</button>
-          </mat-card-actions>
-
-        </mat-card>
-      </div>
-    </div>
-
-
-    <div style="float: right;">
-      <button class="btn" mat-raised-button color="accent" matStepperPrevious>Back</button>
-      <button class="btn" mat-raised-button color="primary" (click)="submitForm()" data-toggle="modal"
-      data-target="#exampleModalCenter1" role="button">Submit</button>
-    </div>
-  </mat-step>
+      <!-- data-toggle="modal"
+      data-target="#exampleModalCenter1" -->
+    </mat-step>
+  
 
 </mat-horizontal-stepper>
+
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<div id="serverSuccess">Success </div>
+<div class="btnDiv">
+
+  <button id="serverMsgBtn" class="btn btn-success" style="float: right;" (click)="onClearErrors()">Ok</button>
+</div>

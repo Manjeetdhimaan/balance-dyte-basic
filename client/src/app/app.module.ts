@@ -21,6 +21,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './shared/components/ui-components/spinner/spinner.component';
+import { SnackBarComponent } from './shared/components/ui-components/snack-bar/snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +36,15 @@ import { MatCardModule } from '@angular/material/card';
     ModalComponent,
     VideoPreviewComponent,
     BannerComponent,
-    DietFormComponent
+    DietFormComponent,
+    SpinnerComponent,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     MatFormFieldModule,
@@ -47,7 +54,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatGridListModule,
     MatRadioModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
