@@ -1,8 +1,9 @@
 <nav class="main-header">
     <div id="brand" data-aos="zoom-in-up">
       <div id="logo">
-        <a href="index.html">
-          <i class="fab fa-blackberry"></i>
+        <a routerLink="">
+          <img src="assets/images/BALANCE.png" alt="logo">
+          <!-- <i class="fab fa-blackberry"></i> -->
         </a>
       </div>
       <div id="word-mark">
@@ -20,8 +21,8 @@
         </div>
       </div>
       <ul class="text-center text-capitalize nav-agile" data-aos="zoom-in-up">
-        <li>
-          <a routerLink="" class="active">home</a>
+        <li (click)="scrollTop()">
+          <a routerLink="" href="#logo" class="scroll" class="active">home</a>
         </li>
         <li>
           <a href="#choose" class="scroll">Why Choose Us</a>
@@ -33,7 +34,7 @@
           <a href="#pricing" class="scroll">Pricing</a>
         </li> -->
         <li>
-          <a href="#faq" class="scroll">Faq's</a>
+          <a href="#testimonials" class="scroll">Reviews</a>
         </li>
         <!-- <li>
           <a href="#contact" class="scroll">Contact</a>

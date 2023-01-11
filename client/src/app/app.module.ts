@@ -11,7 +11,6 @@ import { FooterComponent } from './core/footer/footer.component';
 import { LoginComponent } from './core/login/login.component';
 import { ModalComponent } from './shared/components/ui-components/modal/modal.component';
 import { VideoPreviewComponent } from './shared/components/ui-components/video-preview/video-preview.component';
-import { BannerComponent } from './core/banner/banner.component';
 import { DietFormComponent } from './diet-form/diet-form.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,6 +21,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatChipsModule } from '@angular/material/chips';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './shared/components/ui-components/spinner/spinner.component';
 import { SnackBarComponent } from './shared/components/ui-components/snack-bar/snack-bar/snack-bar.component';
@@ -35,7 +35,6 @@ import { SnackBarComponent } from './shared/components/ui-components/snack-bar/s
     LoginComponent,
     ModalComponent,
     VideoPreviewComponent,
-    BannerComponent,
     DietFormComponent,
     SpinnerComponent,
     SnackBarComponent
@@ -55,7 +54,8 @@ import { SnackBarComponent } from './shared/components/ui-components/snack-bar/s
     MatGridListModule,
     MatRadioModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

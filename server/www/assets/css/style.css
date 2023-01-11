@@ -1,9 +1,7 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+
+
+/* Nice light yellow color =    #feefc3 */
+/* Nice light purple color =    #cacae8 */
 html,
 body {
     margin: 0;
@@ -76,7 +74,7 @@ header.index-banner {
 
 button.btn.w3ls-btn {
     padding: 8px 29px;
-    background: #cacae8;
+    background: #B9804F;
     color: black;
     font-weight: 500;
     border: none;
@@ -105,7 +103,7 @@ nav.main-header.navShadow {
     -webkit-box-shadow: 0 4px 30px -5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 30px -5px rgba(0, 0, 0, 0.2);
     height: 80px;
-    background: #cacae8;
+    background: #B9804F;
 }
 
 nav.navShadow #word-mark {
@@ -130,7 +128,7 @@ ul.nav-agile {
 #logo {
     width: 55px;
     height: 55px;
-    background: #cacae8;
+    background: #B9804F;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -197,7 +195,7 @@ div#word-mark h1 a {
 #menu-toggle {
     width: 55px;
     height: 55px;
-    background: #cacae8;
+    background: #B9804F;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -404,7 +402,7 @@ section {
 }
 
 .banner {
-    background: url(../images/home-banner.jpg) no-repeat center;
+    background: url(../images/home-banner.jpeg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -456,8 +454,8 @@ section {
     border-radius: 0;
 }
 .slider-info a.btn:hover {
-    border: 2px solid #cacae8;
-    color: #cacae8;
+    border: 2px solid #B9804F;
+    color: #B9804F;
 }
 h3.txt-w3_agile {
     font-size: 3.2em;
@@ -500,9 +498,9 @@ h3.txt-w3_agile {
     padding: 0.8em 1em;
     font-size: 16px;
     cursor: pointer;
-    border: 2px solid #cacae8;
+    border: 2px solid #B9804F;
     outline: none;
-    background: #cacae8;
+    background: #B9804F;
     width: 100%;
     letter-spacing: 1px;
     transition: 0.5s all;
@@ -582,7 +580,7 @@ h3.txt-w3_agile {
     font-size: 1em;
     width: 55px;
     height: 55px;
-    background: #cacae8;
+    background: #B9804F;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
@@ -591,8 +589,8 @@ h3.txt-w3_agile {
 }
 .btn-primary {
     color: #fff;
-    background-color: #cacae8;
-    border-color: #cacae8;
+    background-color: #B9804F;
+    border-color: #B9804F;
     border-radius: 0;
     padding: 8px 25px;
 }
@@ -689,7 +687,7 @@ h3.heading {
 
 /*-- quote --*/
 .quote {
-    background: #cacae8;
+    background: #B9804F;
 }
 .quote h4 {
     font-size: 34px;
@@ -703,15 +701,15 @@ h3.heading {
     float: left;
 }
 .quote a {
-    background: #cacae8;
-    color: black;
+    background: #B9804F;
+    color: #fff;
     padding: 10px 30px;
     display: inline-block;
     font-size: 17px;
     letter-spacing: 1px;
 }
 .quote a:hover {
-    background: #cacae8;
+    background: #B9804F;
 }
 .start {
     width: 20%;
@@ -795,14 +793,14 @@ ul.list-unstyled li {
 
 .price-inner .log-in a {
     font-size: 15px;
-    background: #cacae8;
+    background: #B9804F;
     border-radius: 0;
     letter-spacing: 1px;
     color: black;
     padding: 6px 25px;
 }
 .price-inner .log-in a:hover {
-    background: #cacae8;
+    background: #B9804F;
 }
 .price-inner.card h4 {
     color: #a7aaad;
@@ -920,7 +918,7 @@ ul.faq p {
 }
 .contact input[type="submit"] {
     font-size: 16px;
-    background: #cacae8;
+    background: #B9804F;
     border-radius: 0;
     letter-spacing: 1px;
     color: #333;
@@ -930,7 +928,7 @@ ul.faq p {
     cursor: pointer;
 }
 .contact input[type="submit"]:hover {
-    background: #cacae8;
+    background: #B9804F;
 }
 /*-- //contact --*/
 
@@ -1118,7 +1116,7 @@ ul.links li a:hover {
     font-size: 1em;
     width: 55px;
     height: 55px;
-    background: #cacae8;
+    background: #B9804F;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
@@ -1372,7 +1370,7 @@ ul.callbacks_tabs {
 }
 ul.d-flex li i {
     font-size: 14px;
-    color: #cacae8;
+    color: #B9804F;
 }
 .testi-agile h4 {
     color: #fff;

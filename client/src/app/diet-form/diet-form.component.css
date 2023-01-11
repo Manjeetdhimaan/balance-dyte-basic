@@ -83,28 +83,28 @@
 
 
 /* ::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-    color: #cacae8
+    color: #B9804F
 } */
 
 ::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-    background-color: #cacae8!important;
-    color: black;
+    background-color: #B9804F!important;
+    /* color: black; */
 }
 
 ::ng-deep .mat-step-header .mat-step-icon-state-edit{
-    background-color: #cacae8!important;
-    color: black;
+    background-color: #B9804F!important;
+    /* color: black; */
 }
 
 ::ng-deep .mat-mdc-raised-button:not(:disabled) {
-    background-color: #cacae8!important;
-    color: black!important;
+    background-color: #B9804F!important;
+    /* color: black!important; */
 }
 
 
 ::ng-deep .mat-mdc-outlined-button:not(:disabled) {
-    border-color: #cacae8!important;
-    color: black!important;
+    border-color: #B9804F!important;
+    /* color: black!important; */
 }
 
 
@@ -112,3 +112,42 @@
     background-color:brown;
     color:white;
   }
+  #duration-label {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  #duration-label::after {
+    content: attr(data-duration);
+    position: absolute;
+    top: 23px;
+    left: 22px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 12px;
+    background-color: rgba(191, 191, 191, 0.598);
+}
+
+  #weight-label {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  #weight-label::after {
+    content: attr(data-duration);
+    position: absolute;
+    top: 23px;
+    left: 29px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 12px;
+    background-color: rgba(191, 191, 191, 0.598);
+}

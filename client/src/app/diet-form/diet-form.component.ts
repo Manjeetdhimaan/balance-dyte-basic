@@ -5,16 +5,12 @@ import { environment } from 'src/environments/environment';
 import { ApiService } from '../services/api.service';
 import { SnackBarComponent } from '../shared/components/ui-components/snack-bar/snack-bar/snack-bar.component';
 
-// export interface StepType {
-//   label: string;
-//   fields: FormlyFieldConfig[];
-// }
-
 @Component({
   selector: 'app-diet-form',
   templateUrl: './diet-form.component.html',
   styleUrls: ['./diet-form.component.css']
 })
+
 export class DietFormComponent implements OnInit {
 
   personalDetailsFormGroup: FormGroup;
@@ -52,6 +48,28 @@ export class DietFormComponent implements OnInit {
     });
   }
 
+  addPostfix(elementId: string) {
+    const postFix = document.getElementById(elementId) as HTMLElement;
+    if (postFix) {
+      postFix.style.visibility = 'visible';
+      postFix.style.opacity = '1';
+    }
+  }
+
+  removePostfix(elementId: string) {
+    if (this.goalPlanDetailsFormGroup.value.duration === '' || !this.goalPlanDetailsFormGroup.value.duration) {
+      const postFix = document.getElementById('duration-label') as HTMLElement;
+      postFix.style.visibility = 'hidden';
+      postFix.style.opacity = '0';
+    }
+    if (this.goalPlanDetailsFormGroup.value.weight === '' || !this.goalPlanDetailsFormGroup.value.weight) {
+      const weight = document.getElementById('weight-label') as HTMLElement;
+      weight.style.visibility = 'hidden';
+      weight.style.opacity = '0';
+    }
+  }
+
+
   personalDetailsFormObject: any;
   goalDetailsFormObject: any;
   otherDetailsFormObject: any;
@@ -65,32 +83,20 @@ export class DietFormComponent implements OnInit {
   }
 
   submitForm() {
-    // let snackBarRef = this._snackBar.openFromComponent(SnackBarComponent,  {
-    //   data: 'Success' + `!<br> <br><h6>We will connect you within 1-2 days with your diet plan.</h6>`,
-    //   panelClass: ["custom-style"]
-    // });
-
-    // snackBarRef.afterDismissed().subscribe(() => {
-    //   console.log('The snackbar was dismissed');
-    // });
-
-    
     this.isLoading = true;
     if (this.personalDetailsFormGroup.valid && this.goalPlanDetailsFormGroup.valid && this.otherDetailsFormGroup.valid) {
-
       // const ele = document.body.querySelector('#exampleModalCenter1')
       // console.log(ele);
-
       const formObj = Object.assign({}, this.personalDetailsFormGroup.value, this.goalPlanDetailsFormGroup.value, this.otherDetailsFormGroup.value, { domain: environment.domain });
       this.apiService.postEmail(formObj).subscribe(
         (res: any) => {
           this.isLoading = false;
-          // let snackBarRef = this._snackBar.open(res['message'] + '!<br> <h5>We will connect you within 1-2 days with your diet plan.', 'Ok');
-
           let snackBarRef = this._snackBar.openFromComponent(SnackBarComponent, {
             data: res['message'] + `!<br><br> <h6>We will connect you within 1-2 days with your diet plan.</h6>`
           });
-
+          setTimeout(() => {
+            snackBarRef.dismiss()
+          }, 8000);
           // const serverSuccessDIV = document.getElementById('serverSuccess') as HTMLElement;
           // const serverMsgBtn = document.getElementById('serverMsgBtn') as HTMLElement;
           // serverSuccessDIV.style.visibility = 'visible';
@@ -100,12 +106,10 @@ export class DietFormComponent implements OnInit {
           // serverMsgBtn.style.opacity = '1';
           // serverSuccessDIV.innerHTML = res["message"] + `!<br> <h5>We will connect you within 1-2 days with your diet plan.</h5>`;
           // serverSuccessDIV.appendChild(serverMsgBtn);
-          console.log(res);
         },
         err => {
           this.isLoading = false;
           console.log(err);
-
           let snackBarRef = this._snackBar.openFromComponent(SnackBarComponent, {
             data: err['statusText']
           });
@@ -118,21 +122,14 @@ export class DietFormComponent implements OnInit {
     }
   }
 
-
-
-
-  
-
   onClearErrors() {
-    console.log('clicked');
     const serverMsgBtn = document.getElementById('serverMsgBtn') as HTMLElement;
     serverMsgBtn.style.visibility = 'hidden';
     serverMsgBtn.style.opacity = '0';
 
-      const serverSuccessDIV = document.getElementById('serverSuccess') as HTMLElement;
-      serverSuccessDIV.style.visibility = 'hidden';
-      serverSuccessDIV.style.opacity = '0';
-      serverSuccessDIV.style.transform = "translate(-50%, 50px)";
-
+    const serverSuccessDIV = document.getElementById('serverSuccess') as HTMLElement;
+    serverSuccessDIV.style.visibility = 'hidden';
+    serverSuccessDIV.style.opacity = '0';
+    serverSuccessDIV.style.transform = "translate(-50%, 50px)";
   }
 }
