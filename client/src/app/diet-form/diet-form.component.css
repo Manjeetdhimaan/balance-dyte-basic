@@ -83,27 +83,27 @@
 
 
 /* ::ng-deep .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-    color: #B9804F
+    color: #215705
 } */
 
 ::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
-    background-color: #B9804F!important;
+    background-color: #215705!important;
     /* color: black; */
 }
 
 ::ng-deep .mat-step-header .mat-step-icon-state-edit{
-    background-color: #B9804F!important;
+    background-color: #215705!important;
     /* color: black; */
 }
 
 ::ng-deep .mat-mdc-raised-button:not(:disabled) {
-    background-color: #B9804F!important;
+    background-color: #215705!important;
     /* color: black!important; */
 }
 
 
 ::ng-deep .mat-mdc-outlined-button:not(:disabled) {
-    border-color: #B9804F!important;
+    border-color: #215705!important;
     /* color: black!important; */
 }
 
@@ -121,7 +121,7 @@
     content: attr(data-duration);
     position: absolute;
     top: 23px;
-    left: 22px;
+    left: 28px;
     font-family: arial, helvetica, sans-serif;
     font-size: 12px;
     display: block;

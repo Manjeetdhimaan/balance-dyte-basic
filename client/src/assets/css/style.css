@@ -74,8 +74,8 @@ header.index-banner {
 
 button.btn.w3ls-btn {
     padding: 8px 29px;
-    background: #B9804F;
-    color: black;
+    background: #215705;
+    color: white;
     font-weight: 500;
     border: none;
     font-size: 17px;
@@ -95,6 +95,7 @@ nav.main-header {
     position: fixed;
     top: 0;
     z-index: 10;
+    background-color: #fff;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
@@ -103,7 +104,8 @@ nav.main-header.navShadow {
     -webkit-box-shadow: 0 4px 30px -5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 30px -5px rgba(0, 0, 0, 0.2);
     height: 80px;
-    background: #B9804F;
+    /* background: #215705; */
+    background: #fff;
 }
 
 nav.navShadow #word-mark {
@@ -126,11 +128,15 @@ ul.nav-agile {
 }
 
 #logo {
-    width: 55px;
+    width: 95px;
     height: 55px;
-    background: #B9804F;
+    /* background: #215705; */
     border-radius: 50%;
     cursor: pointer;
+}
+
+.nav-logo {
+    margin-top: -20px;
 }
 
 #word-mark {
@@ -168,6 +174,10 @@ div#word-mark h1 a {
     padding-right: 50px;
 }
 
+.banner-header-text {
+    word-spacing: 4px;
+}
+
 .nav-agile li {
     margin-left: 30px;
 }
@@ -186,16 +196,22 @@ div#word-mark h1 a {
 .nav-agile li a {
     /*width: 80px; */
     display: block;
-    color: #eee;
+    /* color: #eee; */
+    color: #215705;
     font-size: 17px;
     line-height: 28px;
     letter-spacing: 1px;
 }
 
+.nav-agile li a:hover {
+    color: #EB154B;
+}
+
 #menu-toggle {
     width: 55px;
     height: 55px;
-    background: #B9804F;
+    /* background: #215705; */
+    background: #215705;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -236,7 +252,7 @@ div#word-mark h1 a {
 .bar {
     width: 25px;
     height: 2px;
-    background: black;
+    background: white;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 }
@@ -343,9 +359,25 @@ section {
     flex-wrap: wrap;
 }
 
+.banner-logo {
+    display: block;
+}
+
 /*** Responsive Menu For Smaller Device ***/
 
 @media screen and (max-width: 800px) {
+    .banner-logo {
+        display: none;
+    }
+
+    .agileinfo-logo h2 {
+        font-size: 30px!important;
+    }
+
+    .banner-header-text {
+        font-size: 20px;
+    }
+
     #menu-toggle {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -381,8 +413,9 @@ section {
         opacity: 1;
         visibility: visible;
         margin: 0;
-        background: #333;
-        padding: 1em 1.35em;
+        /* background: #333; */
+        background: #fff;
+        padding: 1em 1.35em 1.35em 1.35em;
         width: auto;
     }
     .nav-agile li {
@@ -454,8 +487,8 @@ section {
     border-radius: 0;
 }
 .slider-info a.btn:hover {
-    border: 2px solid #B9804F;
-    color: #B9804F;
+    border: 2px solid #215705;
+    color: #215705;
 }
 h3.txt-w3_agile {
     font-size: 3.2em;
@@ -498,9 +531,9 @@ h3.txt-w3_agile {
     padding: 0.8em 1em;
     font-size: 16px;
     cursor: pointer;
-    border: 2px solid #B9804F;
+    border: 2px solid #215705;
     outline: none;
-    background: #B9804F;
+    background: #215705;
     width: 100%;
     letter-spacing: 1px;
     transition: 0.5s all;
@@ -580,7 +613,7 @@ h3.txt-w3_agile {
     font-size: 1em;
     width: 55px;
     height: 55px;
-    background: #B9804F;
+    background: #215705;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
@@ -589,8 +622,8 @@ h3.txt-w3_agile {
 }
 .btn-primary {
     color: #fff;
-    background-color: #B9804F;
-    border-color: #B9804F;
+    background-color: #215705;
+    border-color: #215705;
     border-radius: 0;
     padding: 8px 25px;
 }
@@ -650,14 +683,14 @@ ul.partners-icon li i {
 h3.heading {
     font-size: 45px;
     font-weight: 600;
-    color: #333;
+    color: #215705;
     text-transform: capitalize;
     letter-spacing: 0;
 }
 .f1 h3 {
     font-size: 27px;
     font-weight: 600;
-    color: #333;
+    color: #215705;
 }
 .f1 p {
     font-size: 16px;
@@ -687,12 +720,12 @@ h3.heading {
 
 /*-- quote --*/
 .quote {
-    background: #B9804F;
+    background: #215705;
 }
 .quote h4 {
     font-size: 34px;
     font-weight: 600;
-    color: #333;
+    color: #215705;
     text-transform: capitalize;
     display: inline-block;
     letter-spacing: 0;
@@ -701,7 +734,7 @@ h3.heading {
     float: left;
 }
 .quote a {
-    background: #B9804F;
+    background: #215705;
     color: #fff;
     padding: 10px 30px;
     display: inline-block;
@@ -709,7 +742,7 @@ h3.heading {
     letter-spacing: 1px;
 }
 .quote a:hover {
-    background: #B9804F;
+    background: #215705;
 }
 .start {
     width: 20%;
@@ -721,7 +754,7 @@ h3.heading {
 .process-grids h4 {
     font-size: 34px;
     font-weight: 600;
-    color: #333;
+    color: #215705;
 }
 .process-grids p {
     font-size: 16px;
@@ -793,14 +826,14 @@ ul.list-unstyled li {
 
 .price-inner .log-in a {
     font-size: 15px;
-    background: #B9804F;
+    background: #215705;
     border-radius: 0;
     letter-spacing: 1px;
     color: black;
     padding: 6px 25px;
 }
 .price-inner .log-in a:hover {
-    background: #B9804F;
+    background: #215705;
 }
 .price-inner.card h4 {
     color: #a7aaad;
@@ -918,7 +951,7 @@ ul.faq p {
 }
 .contact input[type="submit"] {
     font-size: 16px;
-    background: #B9804F;
+    background: #215705;
     border-radius: 0;
     letter-spacing: 1px;
     color: #333;
@@ -928,7 +961,7 @@ ul.faq p {
     cursor: pointer;
 }
 .contact input[type="submit"]:hover {
-    background: #B9804F;
+    background: #215705;
 }
 /*-- //contact --*/
 
@@ -1116,7 +1149,7 @@ ul.links li a:hover {
     font-size: 1em;
     width: 55px;
     height: 55px;
-    background: #B9804F;
+    background: #215705;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
@@ -1370,7 +1403,7 @@ ul.callbacks_tabs {
 }
 ul.d-flex li i {
     font-size: 14px;
-    color: #B9804F;
+    color: #215705;
 }
 .testi-agile h4 {
     color: #fff;
@@ -1525,7 +1558,7 @@ ul.d-flex li i {
         border-radius: 50%;
     }
     ul.showMenu li {
-        padding: 1em 1.2em;
+        padding: 1em 1.35em 1.35em 1.35em;
     }
 }
 
@@ -1542,7 +1575,7 @@ ul.d-flex li i {
         margin-top: 2em;
     }
     ul.showMenu li {
-        padding: 1em 1.05em;
+        padding: 1em 1.35em 1.35em 1.35em;
     }
 }
 
@@ -1574,7 +1607,11 @@ ul.d-flex li i {
 }
 @media (max-width: 640px) {
     ul.showMenu li {
-        padding: 1em 0.6em;
+        padding: 1.35em 0.6em;
+    }
+
+    #word-mark {
+        display: none;
     }
 }
 
@@ -1589,7 +1626,7 @@ ul.d-flex li i {
         padding-right: 35px;
     }
     ul.showMenu li {
-        padding: 1em 0.45em;
+        padding: 1.35em 0.45em;
     }
 }
 @media (max-width: 568px) {

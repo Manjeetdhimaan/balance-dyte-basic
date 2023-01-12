@@ -113,6 +113,9 @@ export class DietFormComponent implements OnInit {
           let snackBarRef = this._snackBar.openFromComponent(SnackBarComponent, {
             data: err['statusText']
           });
+          setTimeout(() => {
+            snackBarRef.dismiss()
+          }, 8000);
         }
       );
     }

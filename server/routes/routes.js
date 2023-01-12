@@ -12,7 +12,7 @@ router.post('/send-mail',  (req, res, next) => {
       });
       
       const mailOptions = {
-        from: 'youremail@gmail.com',
+        from: 'balancedyte@gmail.com',
         to: process.env.ADMIN_EMAIL || 'balancedyte@gmail.com',
         subject: 'Email for diet plan from ' + req.body.domain,
         html: `<h2>Someone sent email for diet plan on ${req.body.domain}</h2> 
@@ -20,7 +20,7 @@ router.post('/send-mail',  (req, res, next) => {
         <h3> Email:  <strong><i>${req.body.email}</i></strong></h3>
         <h3> Contact No.:  <strong><i>${req.body.phone}</i></strong></h3>
         <h3> Gender:  <strong><i>${req.body.gender}</i></strong></h3>
-        <h3> Age:  <strong><i>${req.body.age}</i></strong></h3>
+        <h3> Age(in years):  <strong><i>${req.body.age}</i></strong></h3>
         <h3> Duration of Plan(in months):  <strong><i>${req.body.duration}</i></strong></h3>
         <h3> Goals:  <strong><i>${req.body.goals}</i></strong></h3>
         <h3> Lose/Gain Weight:  <strong><i>${req.body.loseORgain}</i></strong></h3>
