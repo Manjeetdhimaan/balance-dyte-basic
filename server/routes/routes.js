@@ -12,24 +12,25 @@ router.post('/send-mail',  (req, res, next) => {
       });
       
       const mailOptions = {
-        from: 'balancedyte@gmail.com',
+        from: process.env.AUTH_USER,
         to: process.env.ADMIN_EMAIL || 'balancedyte@gmail.com',
         subject: 'Email for diet plan from ' + req.body.domain,
         html: `<h2>Someone sent email for diet plan on ${req.body.domain}</h2> 
-        <h3> Name:  <strong><i>${req.body.fullname}</i></strong></h3>
-        <h3> Email:  <strong><i>${req.body.email}</i></strong></h3>
-        <h3> Contact No.:  <strong><i>${req.body.phone}</i></strong></h3>
-        <h3> Gender:  <strong><i>${req.body.gender}</i></strong></h3>
-        <h3> Age(in years):  <strong><i>${req.body.age}</i></strong></h3>
-        <h3> Duration of Plan(in months):  <strong><i>${req.body.duration}</i></strong></h3>
-        <h3> Goals:  <strong><i>${req.body.goals}</i></strong></h3>
-        <h3> Lose/Gain Weight:  <strong><i>${req.body.loseORgain}</i></strong></h3>
-        <h3> Weight(in kg(s)):  <strong><i>${req.body.weight}</i></strong></h3>
-        <h3> Height(in feet inches):  <strong><i>${req.body.height}</i></strong></h3>
-        <h3> Medical Issue:  <strong><i>${req.body.medicalIssue ? req.body.medicalIssue : 'No Medical Issue'}</i></strong></h3>
-        <h3> Food Allergy:  <strong><i>${req.body.foodAllergy ? req.body.foodAllergy : 'No Allergy'}</i></strong></h3>
-        <h3> Food Type:  <strong><i>${req.body.foodType}</i></strong></h3>
-        <h3> Going to Gym?:  <strong><i>${req.body.goingGym}</i></strong></h3>
+        <p> Name:  <strong> ${req.body.fullname}</strong></p>
+        <p> Email:  <strong> ${req.body.email}</strong></p>
+        <p> Contact No.:  <strong> ${req.body.phone}</strong></p>
+        <p> Gender:  <strong> ${req.body.gender}</strong></p>
+        <p> Age(in years):  <strong> ${req.body.age}</strong></p>
+        <p> Duration of Plan(in months):  <strong> ${req.body.duration}</strong></p>
+        <p> Goals:  <strong> ${req.body.goals}</strong></p>
+        <p> Lose/Gain Weight:  <strong> ${req.body.loseORgain}</strong></p>
+        <p> Weight(in kg(s)):  <strong> ${req.body.weight}</strong></p>
+        <p> Height(in feet inches):  <strong> ${req.body.height}</strong></p>
+        <p> Medical Issue or Taking any medicines:  <strong> ${req.body.medicalIssue ? req.body.medicalIssue : 'User didn\'t fill up'}</strong></p>
+        <p> Food Allergy:  <strong> ${req.body.foodAllergy ? req.body.foodAllergy : 'User didn\'t fill up'}</strong></p>
+        <p> Food Type:  <strong> ${req.body.foodType}</strong></p>
+        <p> Going to Gym?:  <strong> ${req.body.goingGym}</strong></p>
+        <p> Physically Active?:  <strong> ${req.body.physicallyActive}</strong></p>
         `,
       };
       

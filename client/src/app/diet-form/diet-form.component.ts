@@ -44,7 +44,8 @@ export class DietFormComponent implements OnInit {
       foodAllergy: [''],
       medicalIssue: [''],
       foodType: ['', Validators.required],
-      goingGym: ['', Validators.required]
+      goingGym: ['', Validators.required],
+      physicallyActive: ['', Validators.required],
     });
   }
 
